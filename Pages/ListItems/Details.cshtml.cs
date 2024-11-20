@@ -20,6 +20,7 @@ namespace csci340_iseegreen.Pages_ListItems
         }
 
       public ListItems ListItems { get; set; } = default!; 
+      public int? ListId{ get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -37,6 +38,8 @@ namespace csci340_iseegreen.Pages_ListItems
             {
                 ListItems = listitems;
             }
+            ListId = ListItems.ListID;
+            Console.WriteLine("Current listId" + ListId);
             return Page();
         }
     }
